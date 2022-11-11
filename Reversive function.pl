@@ -1,0 +1,11 @@
+parent(pam,bob).
+parent(tom,bob).
+parent(tom,liz).
+parent(bob,ann).
+parent(bob,pat).
+parent(pat,jim).
+child(X,Z):-parent(Y,X).
+successor(X,Y):-child(X,Z).
+successor(X,Y):-child(X,Z),successor(X,Y).
+ancestor(X,Z):-parent(X,Z).
+ancestor(X,Z):-parent(X,Y),ancestor(Y,Z).
